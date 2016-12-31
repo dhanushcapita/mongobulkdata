@@ -1,0 +1,59 @@
+{
+    "_id" : ObjectId("585bc01257d02e1173e1784a"),
+    "id" : 1,
+    "name" : "patient_1",
+    "location" : "hertfordshire",
+    "type" : "female",
+    "appointments" : [ 
+        {
+            "date" : ISODate("2010-02-10T00:00:00.000Z"),
+            "reason" : "depression",
+            "hospital" : "hospital5"
+        }, 
+        {
+            "date" : ISODate("2011-10-10T00:00:00.000Z"),
+            "reason" : "cancer",
+            "hospital" : "hospital2"
+        }, 
+        {
+            "date" : ISODate("2011-07-10T00:00:00.000Z"),
+            "reason" : "cancer",
+            "hospital" : "hospital4"
+        }, 
+        {
+            "date" : ISODate("2010-04-10T00:00:00.000Z"),
+            "reason" : "pregnancy",
+            "hospital" : "hospital3"
+        }, 
+        {
+            "date" : ISODate("2010-02-10T00:00:00.000Z"),
+            "reason" : "depression",
+            "hospital" : "hospital1"
+        }, 
+        {
+            "date" : ISODate("2011-08-10T00:00:00.000Z"),
+            "reason" : "cancer",
+            "hospital" : "hospital3"
+        }, 
+        {
+            "date" : ISODate("2010-01-10T00:00:00.000Z"),
+            "reason" : "digestion",
+            "hospital" : "hospital2"
+        }, 
+        {
+            "date" : ISODate("2010-05-10T00:00:00.000Z"),
+            "reason" : "cholesterol",
+            "hospital" : "hospital1"
+        }, 
+        {
+            "date" : ISODate("2011-10-10T00:00:00.000Z"),
+            "reason" : "flu",
+            "hospital" : "hospital3"
+        }, 
+        {
+            "date" : ISODate("2010-06-10T00:00:00.000Z"),
+            "reason" : "allergy",
+            "hospital" : "hospital1"
+        }
+    ]
+}
