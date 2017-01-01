@@ -1,5 +1,5 @@
 
-Demonstrate some MongoDB behaviors with 1 million data
+Demonstrate some of my experiments with MongoDB using 1 million data
 
 -   My development machine:  
     -	Intel Core i7 2.90GHz  
@@ -21,19 +21,20 @@ Demonstrate some MongoDB behaviors with 1 million data
     -	I was getting out of memory exception while trying to create more than hundred thousand records at a time. So create 1 million records by running the script 10 times after changing ‘iteration’ variable (0, 1, 2 to 9)  
     -	By default JSON.stringify will create JSON keys and values inside the quotes. This will create issues in MongoDB to create Date field  
     -	‘stringify-object’ module is using to create JSON keys and values without quotes. But this is time consuming. Taking around 20 seconds to create data file with hundred thousand records  
-    -	Data files will create as bigdata0.json, bigdata1.json etc… according to iteration variable  
+    -	Data files will create as bigdata0.json, bigdata1.json etc… according to the iteration variable  
 
 -   Upload bulk data:  
     -	mongoimport -d local -c patients --jsonArray --file bigdata0.json --numInsertionWorkers 8  
     -	numInsertionWorkers is the number of parallel threads to speed up the operation  
-    -	Around 7 seconds is taking to upload hundred thousand records with 8 threads  
+    -	Around 4 seconds is taking to upload hundred thousand records with 8 threads  
 
 -   Analyze performance of queries:  
-    -	Always use explain("executionStats") along with query to analyze the performance statistics. Some important properties are executionTimeMillis, totalDocsExamined, executionStages .stage etc…  
+    -	Always use explain("executionStats") along with query to analyze the performance statistics. Some important properties are executionTimeMillis, totalDocsExamined, executionStages.stage etc…  
+    -   stage property indicates that whether the query is using index or not
     -	Create appropriate indexes (single or compound) according to query planner  
     -	MongoDB uses only one index for a query  
     -	Always delete unused indexes  
-    -	Use ‘setProfilingLevel’ function to analyze performance in production environment. Analyze ‘system.profile’ collection after the profiling level is set   
+    -	Use ‘setProfilingLevel’ function to analyze the performance in production environment. Analyze ‘system.profile’ collection after the profiling level is set   
     -	All the find queries that I have used were performing very well after creating indexes  
 
 -   Aggregation framework:  
